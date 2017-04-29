@@ -1,0 +1,72 @@
+$primaryColor: #1F242B;
+$formColor: #E8E8E8;
+$buttonColor: #5EABF9;
+$headerColor:#6cb9ae;
+$footerColor: #ADB8C8;
+
+body {
+  background-color: $primaryColor;
+  height: 100vh;
+}
+
+.main-header {
+  background-color:$headerColor;
+  width: 100%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.tagline {
+  padding: 2%;
+  font-size: 20px;
+  margin: 0 auto;
+  padding-top: 1%;
+  text-align: center;
+}
+
+.main-content {
+  background-color: $formColor;
+  border: 6px solid $formColor;
+  margin: 0 auto;
+  width: 35%;
+  height: 35%;
+  max-width: 500px;
+  text-align: center
+}
+
+.login-header {
+  padding: 5%;
+  margin-top: 0;
+  background-color: $formColor;
+}
+
+#loginInput {
+  margin-bottom: 5%;
+}
+
+.big-input {
+  width: 60%;
+}
+
+.action-row button{
+  margin-top: 5%;
+  width: 92%;
+  background-color: $buttonColor;
+}
+
+.help-center {
+  margin-top: 5%;
+  font-size: 12px;
+}
+
+footer ul {
+  max-width: 500px;
+}
+
+footer {
+  background-color:$footerColor;
+  width: 100%;
+  margin-top:35vh;
+}
