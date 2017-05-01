@@ -1,6 +1,6 @@
 $primaryColor: #1F242B;
 $formColor: #E8E8E8;
-$buttonColor: #5EABF9;
+$buttonColor: #ff9977;
 $headerColor:#6cb9ae;
 $footerColor: #ADB8C8;
 
@@ -16,9 +16,16 @@ body {
   padding-bottom: 3%;
   margin: 0 auto;
   text-align: center;
+  font-size: 38px;
+  font-family: Arial;
+}
+
+.main-header a {
+  color: $primaryColor;
 }
 
 .tagline {
+  color: $formColor;
   padding: 2%;
   font-size: 20px;
   margin: 0 auto;
@@ -31,7 +38,7 @@ body {
   border: 6px solid $formColor;
   margin: 0 auto;
   width: 35%;
-  height: 35%;
+  height: 38%;
   max-width: 500px;
   text-align: center
 }
@@ -42,12 +49,9 @@ body {
   background-color: $formColor;
 }
 
-#loginInput {
-  margin-bottom: 5%;
-}
-
 .big-input {
   width: 60%;
+  margin-bottom: 3%;
 }
 
 .action-row button{
@@ -69,4 +73,5 @@ footer {
   background-color:$footerColor;
   width: 100%;
   margin-top:35vh;
+  padding: 3px;
 }
