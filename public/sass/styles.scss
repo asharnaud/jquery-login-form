@@ -1,8 +1,8 @@
 $primaryColor: #1F242B;
 $formColor: #E8E8E8;
-$buttonColor: #ff9977;
-$headerColor:#6cb9ae;
-$footerColor: #ADB8C8;
+$buttonColor: #ffa080;
+$headerColor:#bef5e4;
+$footerColor: #c9d9d6;
 
 body {
   background-color: $primaryColor;
@@ -46,7 +46,15 @@ body {
 .login-header {
   padding: 5%;
   margin-top: 0;
+  margin-bottom:0;
   background-color: $formColor;
+}
+
+#error {
+  color:red;
+  font-size: 12px;
+  margin-top: 0;
+  margin-bottom: 10px;
 }
 
 .big-input {
