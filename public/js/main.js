@@ -1,24 +1,32 @@
 var $ = window.jQuery
 
 var LOGIN_BUTTON = $('#loginBtn')
-var userName = $('#loginInput').val()
-var passWord = $('#passwordInput').val()
+var TEN_SECONDS = 10000
 
-function fetchLoginInfo () {
-  var LOGIN_URL = 'http://127.0.0.1:7979/api/login'
-  var LOGIN_DATA = {username: userName, password: passWord}
-  $.post(LOGIN_URL, LOGIN_DATA).done(sendToSuccessUrl).fail(errorHandler)
-}
-
-function validateLoginInfo (e) {
-  e.preventDefault()
-  if (userName === '' && passWord === '') {
-    LoadingState()
-    fetchLoginInfo()
+function LoginInfo (evt) {
+  evt.preventDefault()
+  var $userName = $('#loginInput').val()
+  var $passWord = $('#passwordInput').val()
+  if ($userName !== '' || $passWord !== '') {
+    var userLoginInfo = {username: $userName, password: $passWord}
+    validateAndFetchLoginInfo(userLoginInfo)
   } else {
     $('.error-message').html('Your username and password are missing!')
-    console.log('missing')
   }
+}
+
+function validateAndFetchLoginInfo (userInfo) {
+  LoadingState()
+  var LOGIN_URL = 'http://127.0.0.1:7979/api/login'
+  $.ajax({
+    type: 'POST',
+    url: LOGIN_URL,
+    data: userInfo,
+    dataType: 'JSON',
+    success: sendToSuccessUrl,
+    error: errorHandler,
+    timeout: TEN_SECONDS
+  })
 }
 
 function sendToSuccessUrl () {
@@ -39,6 +47,7 @@ function errorHandler (error) {
   } else if (error.status === 500) {
     $('#error').html('We are having an internal server error. Please try refreshing the page.')
   }
+  LOGIN_BUTTON.html('Log In')
 }
 
-LOGIN_BUTTON.click(validateLoginInfo)
+LOGIN_BUTTON.click(LoginInfo)
